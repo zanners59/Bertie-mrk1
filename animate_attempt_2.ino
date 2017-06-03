@@ -27,6 +27,7 @@ void setup()
   arduboy.begin();
   arduboy.clear();
   arduboy.setFrameRate(30);
+  sprites.drawSelfMasked(0, 0, player, frame);
 }
 void loop() {
   if (!(arduboy.nextFrame())) return;
