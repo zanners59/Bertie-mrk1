@@ -1,4 +1,4 @@
-//get bertie to move while animated
+// bertie is now animated walking and moving ... next to make him change to flying sprite when i tap button A and jump
 
 #include <Arduboy2.h>
 
@@ -27,12 +27,12 @@ void setup()
   arduboy.begin();
   arduboy.clear();
   arduboy.setFrameRate(30);
-  sprites.drawSelfMasked(0, 0, player, frame);
+  
 }
 void loop() {
   if (!(arduboy.nextFrame())) return;
   arduboy.clear();
-  sprites.drawSelfMasked(0, 0, player, frame);
+  sprites.drawSelfMasked(playerx, playery, player, frame)
   if (arduboy.everyXFrames(3)) frame++;
   if (frame > 2) frame = 0;
   // this is not yet working currently the sprite does not react when buttons are pressed
